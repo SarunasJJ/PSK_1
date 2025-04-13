@@ -3,7 +3,22 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
              version="3.2">
-  <persistence-unit name="default">
+  <persistence-unit name="default" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>jdbc/postgresDS</jta-data-source>
+
+    <class>org.example.psk1.entities.CarRental</class>
+    <class>org.example.psk1.entities.Client</class>
+    <class>org.example.psk1.entities.Vehicle</class>
+    <properties>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+      <property name="hibernate.hbm2ddl.auto" value="create" />
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+    </properties>
 
   </persistence-unit>
+
 </persistence>

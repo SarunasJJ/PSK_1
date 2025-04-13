@@ -1,0 +1,12 @@
+<mapper namespace="org.example.psk1.Mappers.VehicleMapper">
+
+  <insert id="insertVehicle" parameterType="Vehicle">
+    INSERT INTO vehicle (id, vin, brand, model)
+    VALUES (#{id}, #{vin}, #{brand}, #{model})
+  </insert>
+
+  <select id="getAllVehicles" resultType="Vehicle">
+    SELECT * FROM vehicle
+  </select>
+
+</mapper>
