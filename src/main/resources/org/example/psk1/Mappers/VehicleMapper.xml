@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.psk1.Mappers.VehicleMapper">
+
+  <insert id="insertVehicle" parameterType="Vehicle">
+    INSERT INTO vehicle (id, vin, brand, model)
+    VALUES (#{id}, #{vin}, #{brand}, #{model})
+  </insert>
+
+  <select id="getAllVehicles" resultType="Vehicle">
+    SELECT * FROM vehicle
+  </select>
+
+  <select id="findVehicleById" parameterType="long" resultType="Vehicle">
+    SELECT * FROM vehicles WHERE id = #{id}
+  </select>
+
+  <delete id="deleteVehicle" parameterType="long">
+    DELETE FROM vehicles WHERE id = #{id}
+  </delete>
+
+</mapper>
