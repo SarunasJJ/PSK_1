@@ -1,4 +1,4 @@
-package org.example.psk1.entities;
+package org.example.psk1.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -35,6 +35,5 @@ public class Client {
             inverseJoinColumns = @JoinColumn(name = "vehicle_id")
     )
     private List<Vehicle> vehicles;
-
 
 }

@@ -1,0 +1,9 @@
+<configuration>
+  <typeAliases>
+    <typeAlias alias="Vehicle" type="org.example.psk1.Entity.Vehicle"/>
+  </typeAliases>
+
+  <mappers>
+    <mapper resource="src/main/resources/org/example/psk1/Mappers/VehicleMapper.xml"/>
+  </mappers>
+</configuration>

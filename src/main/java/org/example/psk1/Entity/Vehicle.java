@@ -1,4 +1,4 @@
-package org.example.psk1.entities;
+package org.example.psk1.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

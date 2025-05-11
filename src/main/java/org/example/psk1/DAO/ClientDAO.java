@@ -1,26 +1,29 @@
 package org.example.psk1.DAO;
 
-import jakarta.ejb.Stateless;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.example.psk1.entities.Client;
+import jakarta.transaction.Transactional;
+import org.example.psk1.Entity.Client;
 
 import java.util.List;
-
-@Stateless
+// JPA
+@ApplicationScoped
 public class ClientDAO {
+
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void saveClient(Client client) {
+    @Transactional
+    public void save(Client client) {
         entityManager.persist(client);
     }
 
-    public Client findClientById(int id) {
+    public Client find(int id) {
         return entityManager.find(Client.class, id);
     }
 
-    public List<Client> findAllClients() {
+    public List<Client> findAll() {
         return entityManager.createQuery("SELECT c FROM Client c", Client.class).getResultList();
     }
 }

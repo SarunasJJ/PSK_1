@@ -7,9 +7,9 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jta-data-source>jdbc/postgresDS</jta-data-source>
 
-    <class>org.example.psk1.entities.CarRental</class>
-    <class>org.example.psk1.entities.Client</class>
-    <class>org.example.psk1.entities.Vehicle</class>
+    <class>org.example.psk1.Entity.CarRental</class>
+    <class>org.example.psk1.Entity.Client</class>
+    <class>org.example.psk1.Entity.Vehicle</class>
     <properties>
       <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
       <property name="hibernate.hbm2ddl.auto" value="create" />

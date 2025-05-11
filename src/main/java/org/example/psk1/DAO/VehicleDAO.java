@@ -2,7 +2,7 @@ package org.example.psk1.DAO;
 
 import org.apache.ibatis.session.SqlSession;
 import org.example.psk1.Mappers.VehicleMapper;
-import org.example.psk1.entities.Vehicle;
+import org.example.psk1.Entity.Vehicle;
 
 import java.util.List;
 
@@ -19,5 +19,13 @@ public class VehicleDAO {
 
     public List<Vehicle> getAllVehicles() {
         return vehicleMapper.getAllVehicles();
+    }
+
+    public Vehicle getVehicleById(int id) {
+        return vehicleMapper.getVehicleById(id);
+    }
+
+    public void deleteVehicle(int id) {
+        vehicleMapper.deleteVehicle(id);
     }
 }
